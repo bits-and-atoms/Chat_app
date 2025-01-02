@@ -49,7 +49,7 @@ async function main() {
 
     app.use(express.static(path.resolve("./public")));
     app.get('/', (req, res) => {
-        res.sendFile("/public/index.html");
+        res.sendFile(join(__dirname, 'index.html'));
     })
     io.on('connection', async (socket) => {
         socket.on('chat message', async (msg, clientOffset, callback) => {
